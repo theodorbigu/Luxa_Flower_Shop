@@ -52,11 +52,11 @@ if (process.env.SITE_ONLINE) {
   });
 } else {
   client = new Client({
-    user: "theodorbigu",
-    password: "parola",
-    database: "Luxa_Flower_Shop",
+    user: "btheodor",
+    password: "AurpurAurpur11",
+    database: "postgres",
     host: "localhost",
-    port: 5432,
+    port: 5431,
   });
   protocol = "http://";
   numeDomeniu = "localhost:8081";
