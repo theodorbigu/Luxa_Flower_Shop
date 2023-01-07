@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+  <head>
+    <meta
+      name="keywords"
+      content="flori,florarie,aranjament floral,buchet,buchet de flori,plante"
+    />
+    <meta
+      name="description"
+      content="Luxa este o una dintre cele mai vechi florarii din Bucuresti...(adauga cat mai multe cuvinte cheie)(100 chars)999"
+    />
+    <title>Luxa est.1992</title>
+    <!--  -->
+    <%- include("../fragmente/head") %>
+    <script type="text/javascript" src="/resurse/js/produs.js"></script>
+  </head>
+  <body>
+    <%- include("../fragmente/header") %>
+    <main>
+      <section class="sec-produs">
+        <h2>&nbsp;</h2>
+        <article id="art-produs">
+          <div class="grid_imagine_pret_cumpara">
+            <figure class="imag-produs">
+              <img
+                src="/resurse/pictures/produse/<%- locals.pr.imagine %>"
+                alt="[imagine <%- locals.pr.nume %>]"
+              />
+            </figure>
+          </div>
+          <div class="grid_descriere_produse">
+            <h3><span class="nume"><%- locals.pr.nume %></span></h3>
+            <p>
+              Tip produs:
+              <span class="tip_produs"><%- locals.pr.tip_produs %> </span>
+            </p>
+            <p>
+              Tip flori:
+              <span class="tip_flori"><%- locals.pr.tip_flori %> </span>
+            </p>
+            <p>
+              Nr. fire: <span class="calorii"><%- locals.pr.nr_fire %> </span>
+            </p>
+            <p>
+              Culoare: <span class="gramaj"><%- locals.pr.culoare %> </span>
+            </p>
+            <p>Acest produs este disponibil pentru livrare.</p>
+            <!-- <p>
+              Livrare: <span class="livrare"><%- locals.pr.livrare %> </span>
+            </p>
+            <p>
+              Data adăugare:
+              <span class="categorie"><%- locals.pr.data_adaugare %> </span>
+            </p> -->
+            <div class="buton_pret">
+              <p>Preț: <span class="pret"><%- locals.pr.pret %></span> lei</p>
+              <button class="buton_cumpara_produs">Cumpără</button>
+            </div>
+          </div>
+        </article>
+      </section>
+      <div style="display: none" id="buyItems">
+        <ul>
+          <h4 class="empty">Coșul tău este gol</h4>
+        </ul>
+      </div>
+      <div id="checkout" style="display: none">
+        <h6 id="sum-prices"></h6>
+      </div>
+    </main>
+    <%- include("../fragmente/footer") %>
+  </body>
+</html>

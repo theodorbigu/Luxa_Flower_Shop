@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+  <head>
+    <meta
+      name="keywords"
+      content="flori,florarie,aranjament floral,buchet,buchet de flori,plante"
+    />
+    <meta
+      name="description"
+      content="Luxa este o una dintre cele mai vechi florarii din Bucuresti...(adauga cat mai multe cuvinte cheie)(100 chars)999"
+    />
+    <title>Luxa est.1992</title>
+    <!--  -->
+    <%- include("../fragmente/head") %>
+    <script type="text/javascript" src="/resurse/js/produse.js"></script>
+  </head>
+  <body>
+    <%- include("../fragmente/header") %>
+    <main>
+      <div class="container-produse">
+      <section class="sec-filtrare">
+        
+        <h1 style="text-align: center; font-size: 2.5rem;">Filtre:</h1>
+        <label>  
+          <div class="search-container">
+          <input type="text" id="inp-nume" class="search-box" />
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </div>
+       
+        </label>
+        <label>
+          <div class="info-min">
+          <p class="info-filtrare-pret">Preț minim: </p>
+          <span class="valueMin" id="infoRange_min">0 lei</span>
+        </div><input
+            type="range"
+            id="inp-pret-min"
+            value="0"
+            min="0"
+            max="300"
+          /> </label
+        >
+        <label>
+          <div class="info-max">
+            <p class="info-filtrare-pret">Preț maxim: </p>
+            <span class="valueMax" id="infoRange_max">300 lei</span>
+          </div><input
+            type="range"
+            id="inp-pret-max"
+            value="300"
+            min="0"
+            max="300"
+          /> </label
+        >
+        <!-- <div class="nr_fire_radio">
+          Nr. fire:
+          <label
+            >9 sau mai putine
+            <input id="i_rad1" name="gr_rad" value="1" type="radio" />
+          </label>
+          <label
+            >21 sau mai putine
+            <input id="i_rad2" name="gr_rad" value="2" type="radio" />
+          </label>
+          <label
+            >mai mult de 21
+            <input id="i_rad3" name="gr_rad" value="3" type="radio" />
+          </label>
+          <label
+            >toate
+            <input id="i_rad4" checked name="gr_rad" value="4" type="radio" />
+          </label>
+        </div> -->
+        <!-- <div class="tip_flori_select">
+          <label for="tip_flori">Alege tipul de flori: </label>
+
+          <select name="tip_flori" id="tip_flori">
+            <option value="">Oricare</option>
+            <option value="mixt">Mixt</option>
+            <option value="trandafiri">Trandafiri</option>
+            <option value="garoafe">Garoafe</option>
+            <option value="lalele">Lalele</option>
+            <option value="orhidee">Orhidee</option>
+            <option value="matthiola">Matthiola</option>
+          </select>
+        </div> -->
+        <p>
+          <button class="buton_filtrare" id="filtrare">Filtrează</button>
+          <!-- <button id="resetare">Reseteaza</button><br /> -->
+          <!-- <button id="sortCrescNume">
+            Sorteaza crescator dupa nume si pret
+          </button>
+          <button id="sortDescrescNume">
+            Sorteaza descrescator dupa nume si pret
+          </button> -->
+        </p>
+      </section>
+      <section id="produse">
+        <!-- <h1>Produse</h1> -->
+        <div class="grid-produse">
+          
+          <% for(let pr of locals.produse){ %>
+          <article id="<%-pr.id %>" class="produs">
+            <a href="/produs/<%-pr.id %>">
+              <figure>
+                <img src="/resurse/pictures/produse/<%- pr.imagine %>" />
+              </figure>
+            </a>
+            
+            <p class="nume"><span class="val-nume"><%- pr.nume %></span></p>
+            <div class="info-prod">
+              <p class="pret">
+                
+                <h3><span class="val-pret"><%- pr.pret%></span> lei</h3>
+              </p>
+            </div>
+            
+            <button class="buton_cumpara">Adaugă in coș</button>
+          </article>
+          <% } %>
+        </div>
+      </section>
+      <div style="display: none;" id="buyItems">
+        <ul>
+          <h4 class="empty">Coșul tău este gol</h4>
+        </ul>
+      </div>
+      <div id="checkout" style="display: none;">
+        <h6 id="sum-prices"></h6>
+      </div>
+    </div>
+    
+    </main>
+    <%- include("../fragmente/footer") %>
+  </body>
+</html>

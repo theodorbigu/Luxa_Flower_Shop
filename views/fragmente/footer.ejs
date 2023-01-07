@@ -1,0 +1,49 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>Luxa</h4>
+        <ul>
+          <li><a href="/index">acasa</a></li>
+          <li><a href="/index#despre-noi">despre noi</a></li>
+          <li><a href="/index#contact">contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Produse</h4>
+        <ul>
+          <li><a href="/produse?tip=buchet">buchete</a></li>
+          <li><a href="/produse?tip=aranjament">aranjamente</a></li>
+          <li><a href="/produse?tip=planta">plante</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recent pe blog:</h4>
+        <section id="sectiune-galerie-animata">
+          <div id="galerie-animata" class="galerie-a">
+            <!-- <h2>Galerie animata</h2> -->
+            <% let last_11 = locals.imagini.slice(1);
+            console.log(last_11.fisier); for(let imag of last_11){ %>
+            <figure>
+              <img src="/<%- imag.mic %>" alt="<%- imag.descriere %>" />
+              <!-- <figcaption><%-imag.descriere %></figcaption> -->
+            </figure>
+            <% } %>
+          </div>
+          <button class="blog-button" role="button">
+            <span class="text">Hai să vezi</span>
+          </button>
+        </section>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-pinterest-square"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

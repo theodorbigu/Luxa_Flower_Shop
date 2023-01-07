@@ -1,0 +1,198 @@
+#sectiune-galerie-animata {
+  padding-left: 4%;
+  /* variabila din css-ul general*/
+  padding-right: 4%;
+  position: relative;
+  //right: 100px;
+}
+
+.galerie-a {
+  width: 150px;
+  height: 100px;
+  //border: 3px inset black;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5rem;
+}
+
+.galerie-a figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  text-align: center;
+}
+
+.galerie-a figure {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  top: 50px;
+}
+
+#galerie-animata figure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  animation-name: gal_exemplu;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 21s;
+  transform-origin: center center;
+}
+
+#galerie-animata figure:nth-of-type(7) {
+  /* cea mai de deasupra*/
+  animation-delay: 0s;
+}
+
+#galerie-animata figure:nth-of-type(6) {
+  animation-delay: 3s;
+}
+
+#galerie-animata figure:nth-of-type(5) {
+  animation-delay: 6s;
+}
+
+#galerie-animata figure:nth-of-type(4) {
+  animation-delay: 9s;
+}
+
+#galerie-animata figure:nth-of-type(3) {
+  animation-delay: 12s;
+}
+
+#galerie-animata figure:nth-of-type(2) {
+  animation-delay: 15s;
+}
+
+#galerie-animata figure:nth-of-type(1) {
+  animation-delay: 18s;
+}
+
+/*cum calculam timpii:
+- avem 7 poze; vrem pentru fiecare un timp de afisare de 1.5 secunde si o trecere spre urmatoarea poza de 1.5 secunde
+- rezulta 3 secunde pentru fiecare imagine
+- 7imagini * 3secunde =21 secunde in total pentru animatie (animation-duration) si fiecare poza cu un delay = 3* numarul de ordine
+- momentul in care trebuie ascunsa poza si pusa in spatele celorlalte (ca sa isi astepte randul pentru noua animatie:
+il calculam cu formula  timp_afisare(normal+trecerea la urmatoarea poza)/timp_total*100 = 3/21*100 =  14.285714(aproximativ)
+100%..... 21s
+x%........3s
+
+- calculam 100-14.285714=85.714286 - la acest moment imaginea trebuie sa se vada in spatele imaginii care se afiseaza in mod curent (ca sa se vada si cat timp se realizeaza efectul de schimbare a imaginii
+*/
+@keyframes gal_exemplu {
+  0% {
+    z-index: 10;
+    opacity: 1;
+  }
+  /*perioada 0-5% in care se afiseaza fara efect */
+  7.142857% {
+    transform: scaleY(1) rotateZ(0deg);
+  }
+  /*transformare inceput disparitie*/
+  12% {
+    opacity: 1;
+  }
+  /* de  aici doresc sa descresc si opacitatea;*/
+  14.285714% {
+    z-index: 10;
+    opacity: 0;
+    transform: scaleY(0) rotateZ(90deg);
+  }
+  14.285715% {
+    z-index: -10;
+    transform: scaleY(1) rotateZ(0deg);
+  }
+  /* il ascund cat mai in spate sa nu vina peste imaginile care erau mai sus in html decat el*/
+  85.714287% {
+    opacity: 0;
+    transform: scaleY(1) rotateZ(0deg);
+    z-index: -10;
+  }
+  85.714288% {
+    z-index: 0;
+  }
+  /*setez z-index la 0 ca sa revina la ordinea normala de afisare*/
+  100% {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  #sectiune-galerie-animata {
+    display: none;
+  }
+}
+
+.blog-button {
+  appearance: none;
+  background-color: $green2;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Poppins";
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 0.8em 4.9em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+    background-color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+    color 100ms cubic-bezier(0.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  //border: 3px inset black;
+  position: absolute;
+  bottom: -20px;
+  //left: 103px;
+  z-index: 20;
+  &:hover {
+    color: #24262b;
+  }
+}
+
+.blog-button:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #ebebeb;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+    -webkit-clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.blog-button:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.blog-button:after {
+  background-color: #ffffff;
+}
+
+.blog-button span {
+  z-index: 1;
+  position: relative;
+}

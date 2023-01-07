@@ -1,0 +1,258 @@
+$breakpoint-phone: 768px;
+$breakpoint-tablet: 1024px;
+
+$green1: #4d6a2e;
+$green2: #9ca57c;
+
+$nav-background: #0d0e0d81;
+
+header {
+  position: relative;
+  z-index: 2;
+  nav {
+    position: fixed;
+    width: 100%;
+    background: $nav-background;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10vh;
+    font-family: Poppins;
+    font-size: 1em;
+    li {
+      width: 10em;
+    }
+    .logo {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+    .nav-links {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+      margin-left: 8.4vw;
+      width: 37%;
+      .submeniu {
+        display: none;
+        list-style-type: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 10em;
+        //left: 0;
+        color: $white;
+        li {
+          background: rgba(0, 0, 0, 0.795);
+          padding: 1vh;
+          cursor: pointer;
+          //border: 1px solid black;
+          &:hover {
+            background: $green1;
+          }
+        }
+      }
+      li {
+        text-align: center;
+        position: relative;
+        ::after {
+          content: "";
+          width: 0;
+          height: 1px;
+          display: block;
+          background: $white;
+          transition: 300ms;
+        }
+        //(q)De ce la contact underlineu e mai mare ???
+        &:hover::after {
+          width: 100%;
+        }
+        &:hover .submeniu {
+          display: block;
+          transform-origin: top;
+          animation-name: submeniu;
+          animation-timing-function: linear;
+          animation-duration: 0.25s;
+          animation-fill-mode: forwards;
+          animation-iteration-count: 1;
+        }
+        a {
+          color: $white;
+          text-decoration: none;
+          letter-spacing: 2px;
+          font-weight: bold;
+        }
+      }
+    }
+    .profile {
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+      margin-right: 8.4vw;
+      width: 8%;
+      li a {
+        font-size: 1.2rem;
+        color: $white;
+        cursor: pointer;
+        &:hover {
+          color: $nav-hover;
+        }
+      }
+    }
+    .burger {
+      position: absolute;
+      top: 5vh;
+      right: 10vw;
+      div {
+        width: 25px;
+        height: 3px;
+        background-color: $white;
+        margin: 5px;
+      }
+    }
+    #burger {
+      display: none;
+    }
+    #ch-meniu {
+      display: none;
+    }
+  }
+}
+
+.main-li:hover {
+  color: $nav-hover;
+}
+
+// @media screen and (max-width: 768px) {
+//   .nav-links {
+//     position: absolute !important;
+//     height: 60vh;
+//     right: 0;
+//     top: 10vh;
+//     background-color: gray;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     width: 100%;
+//     display: none;
+//     li {
+//       display: flex;
+//       align-items: center;
+//     }
+//   }
+//   .profile {
+//     position: absolute !important;
+//     top: 5vh;
+//     left: 10vw;
+//     width: 15% !important;
+//     li {
+//       font-size: 1.6rem !important;
+//     }
+//   }
+//   #burger {
+//     display: block !important;
+//   }
+// }
+
+// @media screen and (max-width: 1150px) {
+//   .nav-links {
+//     width: 60% !important;
+//   }
+// }
+
+.nav-hidden {
+  transform: translateY(-10vh);
+  transition: all 0.4s ease;
+}
+nav {
+  transition: all 0.4s ease;
+}
+
+@media (max-width: 1200px) {
+  header {
+    nav {
+      .nav-links {
+        width: 60%;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  header {
+    nav {
+      .nav-links {
+        position: absolute;
+        height: 90vh;
+        width: 100%;
+        right: 0;
+        top: 10vh;
+        background-color: $green2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        transform: translateX(100%);
+        transition: all ease 0.6s;
+        li {
+          //transition-delay: 0.9s;
+          margin-top: 10vh;
+          opacity: 0;
+          ::after {
+            display: none;
+          }
+        }
+        .submeniu {
+          position: relative;
+          li {
+            margin-top: 0;
+            background: $green2;
+          }
+        }
+      }
+      .profile {
+        position: absolute;
+        top: 4.5vh;
+        left: 10vw;
+        width: 15%;
+        li {
+          font-size: 1.6rem;
+        }
+      }
+      #burger {
+        display: block;
+      }
+      //(q)De ce nu merge sa schimb nav-ul
+      #ch-meniu:checked + nav {
+        background: $green2;
+      }
+      #ch-meniu:checked + ul.nav-links {
+        transform: translateX(0%);
+      }
+      #ch-meniu:checked + ul.nav-links li {
+        opacity: 1;
+        transition: all ease 2s;
+      }
+    }
+  }
+}
+
+@keyframes submeniu {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes shadow-sus {
+  0% {
+    text-shadow: 0px -30px $nav-hover;
+  }
+  100% {
+    text-shadow: 0px 0px $nav-hover;
+  }
+}

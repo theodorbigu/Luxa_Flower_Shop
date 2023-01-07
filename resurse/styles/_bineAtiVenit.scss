@@ -1,0 +1,94 @@
+.bineAtiVenit {
+  font-family: "Poppins";
+  background-color: #f6f6f6c2;
+  position: absolute;
+  top: 150vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: fit-content;
+  min-width: 550px;
+  //margin-top: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  //border-radius: 10px;
+  padding: 4rem 7rem;
+  //padding-top: 0;
+  outline: 2px solid black;
+  outline-offset: -10px;
+  h2 {
+    font-family: "Great Vibes";
+    font-size: 6rem;
+    font-weight: 100;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      width: 30%;
+      height: 1px;
+      background: #000;
+      //bottom: 0;
+      left: 35%;
+      top: 80%;
+      position: absolute;
+    }
+  }
+  p {
+    text-align: justify;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+  }
+  .bineAtiVenit-info {
+    text-align: center;
+    font-family: "Quintessential";
+    margin: 0 6rem;
+    font-weight: 400;
+    font-size: larger;
+    margin-bottom: 1rem;
+  }
+}
+
+.inreg-button {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Poppins";
+  margin-top: 2rem;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  text-decoration: none;
+  color: black;
+}
+
+.inreg-button:after {
+  content: "";
+  background-color: #728c56;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.inreg-button:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .inreg-button {
+    padding: 13px 50px 13px;
+  }
+}

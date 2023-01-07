@@ -1,0 +1,52 @@
+#watermark {
+  display: none;
+}
+
+@media print{
+  .html {
+    display: none;
+  }
+  header {
+    color: black;
+    display: none;
+    .burger {
+      display: none;
+    }
+    .profile {
+      display: none;
+    }
+  }
+  #watermark {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    color: rgba(0, 0, 0, 0.4);
+    right: 0;
+  }
+  #watermark::after {
+    opacity: 0.5;
+    padding: 5px;
+    display: block;
+    background: black;
+    border: 2px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: none;
+    content: "Theodor Bigu copyright";
+  }
+}
+@page {
+  size: A4 portrait;
+  margin-bottom: 2cm;
+  margin-top: 2cm;
+  counter-increment: page;
+}
+
+@page:left {
+  margin-left: 2cm;
+  margin-right: 1cm;
+}
+@page:right {
+  margin-right: 2cm;
+  margin-left: 1cm;
+}

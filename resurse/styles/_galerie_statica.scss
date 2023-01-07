@@ -1,0 +1,91 @@
+.galerie-statica {
+  margin: 0 5vh;
+  margin-bottom: 5rem;
+}
+
+.grid-galerie-statica {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: repeat(8, 1fr);
+  .container {
+    //border: 1px solid black;
+    //margin: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    figure {
+      figcaption {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// .grid-galerie-statica > .container.container:nth-child(3n + 1) {
+//   @for $i from 0 through 3 {
+//     border: 3px solid blue;
+//     //grid-area: 2 * $i + 1 / 1 / 2 * $i + 1 / 2;
+//   }
+// }
+//   .grid-galerie-statica > .container.container:nth-child(3n + 2) {
+//     border: 3px solid red;
+//     //grid-area: $i / 1 / $i / 2;
+//   }
+//   .grid-galerie-statica > .container.container:nth-child(3n + 3) {
+//     border: 3px solid green;
+//     //grid-area: $i / 1 / $i / 2;
+//   }
+//   .grid-galerie-statica > .container.container:nth-child(3n + 2) {
+//     border: 3px solid red;
+//     grid-area: 2 * $i + 1 / 3 / 2 * $i + 1 / 4;
+//   }
+
+// .grid-galerie-statica > .container.container:nth-child(1) {
+//   border: 3px solid red;
+//   grid-area: 1 / 1 / 1 / 2;
+// }
+// .grid-galerie-statica > .container.container:nth-child(2) {
+//   border: 3px solid blue;
+//   grid-area: 1 / 3 / 1 / 4;
+// }
+// .grid-galerie-statica > .container.container:nth-child(3) {
+//   border: 3px solid purple;
+//   grid-area: 2 / 2 / 2 / 3;
+// }
+// .grid-galerie-statica > .container.container:nth-child(4) {
+//   border: 3px solid green;
+//   grid-area: 3 / 1 / 3 / 2;
+// }
+// .grid-galerie-statica > .container.container:nth-child(5) {
+//   border: 3px solid yellow;
+//   grid-area: 3 / 3 / 3 / 4;
+// }
+
+@for $i from 0 through 10 {
+  .grid-galerie-statica > .container:nth-child(#{3*$i + 1}) {
+    //border: 3px solid green;
+    grid-area: #{2 * $i + 1} / 1 / #{2 * $i + 1} / 2;
+  }
+}
+@for $i from 0 through 10 {
+  .grid-galerie-statica > .container:nth-child(#{3*$i + 2}) {
+    //border: 3px solid red;
+    grid-area: #{2 * $i + 1} / 3 / #{2 * $i + 1} / 4;
+  }
+}
+@for $i from 0 through 10 {
+  .grid-galerie-statica > .container:nth-child(#{3*$i + 3}) {
+    //border: 3px solid blue;
+    grid-area: #{2 * $i + 2} / 2 / #{2 * $i + 2} / 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-galerie-statica {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .grid-galerie-statica > .container:nth-child(n) {
+    grid-area: auto;
+  }
+}

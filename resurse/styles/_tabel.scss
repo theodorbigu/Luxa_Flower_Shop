@@ -1,0 +1,47 @@
+$border-spacing: 2px;
+$border-spacing-mobile: 0px;
+
+.tabel {
+  width: fit-content;
+  
+  //height: fit-content;
+  table,
+  tr,
+  td,
+  th {
+    border: 1px solid black;
+  }
+  table {
+    border-spacing: $border-spacing;
+    th {
+      background: $primaryBackground;
+    }
+    tr:nth-child(odd) {
+      background: $green1;
+      transition: background 1s ease;
+
+      &:hover {
+        background: red;
+        transition: background 1s ease;
+      }
+    }
+    tr:nth-child(even) {
+      background: $green2;
+      transition: background 1s ease;
+
+      &:hover {
+        transition: background 1s ease;
+        background: $color3;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tabel {
+    table {
+      border-spacing: $border-spacing-mobile;
+    }
+    overflow-x: scroll;
+  }
+}

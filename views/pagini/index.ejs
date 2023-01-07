@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+  <head>
+    <meta
+      name="keywords"
+      content="flori,florarie,aranjament floral,buchet,buchet de flori,plante"
+    />
+    <meta
+      name="description"
+      content="Luxa este o una dintre cele mai vechi florarii din Bucuresti...(adauga cat mai multe cuvinte cheie)(100 chars)999"
+    />
+    <title>Luxa est.1992</title>
+    <!--  -->
+    <%- include("../fragmente/head") %>
+  </head>
+  <body>
+    <%- include("../fragmente/header") %>
+    <main>
+      <p id="watermark"></p>
+      <div class="main_grid">
+        <div class="zona1">
+          <div class="text-image">
+            <img src="/resurse/pictures/Luxa-2.png" alt="logo" />
+            <!-- <div class="line1"></div> -->
+            <p>
+              Bine ai venit în Florăria online <em>Luxa</em>! Te invităm să
+              descoperi micile părți de rai pe care le livrăm sub forma de
+              <b>buchete</b>, <b>aranjamente</b> sau <b>plante</b> de interior
+              in toată splendoarea lor, oriunde iți dorești!
+            </p>
+          </div>
+          <div class="socials">
+            <ul>
+              <li>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fab fa-pinterest-square"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <section class="bineAtiVenit">
+          <h2>Bine ai venit</h2>
+          <hr />
+          <p class="bineAtiVenit-info">
+            florărie specializată în crearea de evenimente deosebite si nunți în București
+          </p>
+          <p>
+            <span style="font-weight: bold; color: #728c56; font-size: 1.3rem">
+              Luxa
+            </span>
+            oferă o gamă largă de buchete si aranjmanete florale pentru nunți in
+            fiecare anotimp. De asemenea, te invităm să ne vizitezi magazinul
+            online unde vei găsi plante de interior si de exterior. Livrăm in
+            toată țara! Înregistrează-te pentru o experiență mai plăcută pe
+            site-ul nostru.
+          </p>
+          <a href="/inregistrare" class="inreg-button" role="button"
+            >Înregistrează-te</a
+          >
+        </section>
+        <section class="sectionAjutor">
+          <h2>Cum te putem ajuta?</h2>
+          <h3>Produsele noastre</h3>
+          <div class="tipuriProduse">
+            <div class="tip" id="tip-buchete">
+              <div class="numar">01</div>
+              <h4>Buchete</h4>
+              <div class="borderHelp">
+                <div id="imag-1" class="imag"></div>
+              </div>
+              <a
+                href="/produse?tip=buchet"
+                class="cumpara-vezi-mai-mult-button"
+                role="button"
+                ><span class="text">Vezi mai mult</span><span>Cumpără</span></a
+              >
+            </div>
+            <div class="tip" id="tip-aranjamente">
+              <div class="numar">02</div>
+              <h4>Aranjamente</h4>
+              <div class="borderHelp">
+                <div id="imag-2" class="imag"></div>
+              </div>
+              <a
+                href="/produse?tip=aranjament"
+                class="cumpara-vezi-mai-mult-button"
+                role="button"
+                ><span class="text">Vezi mai mult</span><span>Cumpără</span></a
+              >
+            </div>
+            <div class="tip" id="tip-plante">
+              <div class="numar">03</div>
+              <h4>Plante</h4>
+              <div class="borderHelp">
+                <div id="imag-3" class="imag"></div>
+              </div>
+              <a
+                href="/produse?tip=planta"
+                class="cumpara-vezi-mai-mult-button"
+                role="button"
+                ><span class="text">Vezi mai mult</span><span>Cumpără</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <%- include("../fragmente/footer") %>
+  </body>
+</html>

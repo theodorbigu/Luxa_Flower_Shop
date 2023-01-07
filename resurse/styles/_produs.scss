@@ -1,0 +1,120 @@
+#art-produs {
+  margin-top: 7rem;
+  width: 45vw;
+  height: 60vh;
+  background-color: #f6f6f6c2;
+  outline: 2px solid black;
+  outline-offset: -10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "imagine_produs descriere_produs"
+    "imagine_produs descriere_produs";
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  //border: 1px solid red;
+}
+
+.grid_imagine_pret_cumpara {
+  grid-area: imagine_produs;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 5rem;
+
+  img {
+    --b: 8px; /* control size */
+    padding: var(--b);
+    border: calc(2 * var(--b)) solid #0000;
+    outline: 1px solid #000;
+    outline-offset: calc(-1 * var(--b));
+    background: conic-gradient(from 90deg at 1px 1px, #0000 90deg, #000 0);
+  }
+}
+
+.grid_descriere_produse {
+  grid-area: descriere_produs;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5rem;
+  margin-left: 5rem;
+  p {
+    margin-top: 0.5rem;
+  }
+  .nume {
+    font-size: 22px;
+  }
+  .pret {
+    font-size: 22px;
+  }
+  //padding-bottom: 1rem;
+  //text-align: center;
+}
+
+.buton_pret {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 2px solid black;
+}
+
+// .border-produs {
+//   border: 1px solid rgba(0, 0, 0, 0.384);
+//   padding: 3px;
+// }
+
+.buton_cumpara_produs {
+  align-items: center;
+  background-color: #a03b67;
+  border: none;
+  //border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Poppins";
+  font-size: 16px;
+  //font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  //min-height: 3rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  //margin-top: 1rem;
+}
+
+.buton_cumpara_produs:hover,
+.buton_cumpara_produs:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  //color: $green1;
+  background-color: #b8346d;
+}
+
+.buton_cumpara_produs:hover {
+  transform: translateY(-2px);
+}
+
+.buton_cumpara_produs:active {
+  background-color: #b8346d;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}

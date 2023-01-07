@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta
+      name="keywords"
+      content="flori,florarie,aranjament floral,buchet,buchet de flori,plante"
+    />
+    <meta
+      name="description"
+      content="Luxa este o una dintre cele mai vechi florarii din Bucuresti...(adauga cat mai multe cuvinte cheie)(100 chars)999"
+    />
+    <title>Luxa est.1992</title>
+    <!--  -->
+    <%- include("../fragmente/head") %>
+  </head>
+  <body>
+    <style>
+      #reviste {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      #reviste > .revista:nth-child(6n + 1),
+      #reviste > .revista:nth-child(6n + 2),
+      #reviste > .revista:nth-child(6n + 3) {
+        background-color: coral;
+      }
+      article.revista {
+        pointer-events: none;
+      }
+      #pret {
+        pointer-events: auto;
+      }
+      article.revista:hover {
+        background: red !important;
+        transition: all 2s ease;
+      }
+      #pret:hover {
+        font-weight: bold;
+        transition: all 2s ease;
+      }
+    </style>
+
+    <main>
+      <div class="sort">
+        <input type="radio" id="cresc" name="sort" value="1" />
+        <label for="cresc">cresc</label><br />
+        <input type="radio" id="descresc" name="sort" value="2" />
+        <label for="descresc">descresc</label><br />
+        <button id="buton_sorteaza">SORTEAZA</button>
+      </div>
+      <section id="reviste">
+        <% for(let rev of locals.reviste){ %>
+        <article class="revista" id="idr- <%- rev.id %>">
+          <h2 style="font-style: italic; text-decoration: underline">
+            <%- rev.titlu %> (<span id="nrpagini"> <%- rev.nrpagini %> </span>)
+          </h2>
+          <p>
+            <%- rev.aparitie %> <br />
+            <span id="pret"><%- rev.pret %></span>
+          </p>
+          <ul>
+            <% let tematici= rev.tematici.split("/"); for(let tematica of
+            tematici){ %>
+            <li><%- tematica %></li>
+
+            <% } %>
+          </ul>
+        </article>
+        <% } %>
+      </section>
+    </main>
+
+    <footer><%- include("../fragmente/footer") %></footer>
+    <script>
+      function sorteaza(semn) {
+        var reviste = document.getElementsByClassName("revista");
+        var v_reviste = Array.from(reviste);
+        v_reviste.sort(function (a, b) {
+          var pret_a = a.getElementsById("pret").innerHTML;
+          var nrpagini_a = a.getElementsById("nrpagini").innerHTML;
+          var pret_b = b.getElementsById("pret").innerHTML;
+          var nrpagini_b = b.getElementsById("nrpagini").innerHTML;
+          return semn * (pret_a / nrpagini_a - pret_a / nrpagini_a);
+        });
+        for (let rev of v_reviste) {
+          rev.parentNode.appendChild(rev);
+        }
+      }
+
+      var sort = document.getElementById("buton_sorteaza");
+      var radioButtons = document.querySelectorAll('input[name="sort"]');
+
+      btn.appendChild("click", () => {
+        let value;
+        for (const radioButton of radioButtons) {
+          if (radioButton.checked) {
+            value = radioButton.value;
+          }
+        }
+        if (value == 1) {
+          sorteaza(1);
+        } else if (value == 2) {
+          sorteaza(-1);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<section class="section-form">
+  <form
+    id="form_inreg"
+    method="post"
+    class="date"
+    action="<%= locals.action %>"
+    enctype="multipart/form-data"
+  >
+    <p>
+      <input
+        placeholder="Username"
+        type="text"
+        name="username"
+        id="inp-username"
+        required
+        autocomplete="off"
+        value=""
+        pattern="[A-Za-z0-9]+"
+      />
+    </p>
+    <p>
+      <input
+        placeholder="Nume"
+        type="text"
+        name="nume"
+        id="inp-nume"
+        autocomplete="off"
+        value=""
+      />
+    </p>
+    <p>
+      <input placeholder="Prenume" type="text" name="prenume" id="inp-prenume"
+      value="" pattern="[A-Z][a-z]+([-\.][A-Z][a-z]+)?" autocomplete="off"
+    </p>
+    <p>
+      <input
+        placeholder="Parola"
+        id="parl"
+        type="password"
+        required
+        name="parola"
+        value=""
+        autocomplete="off"
+      />
+    </p>
+    <p id="p-reintrod">
+      <input
+        placeholder="Reintroduceti parola"
+        id="rparl"
+        required
+        type="password"
+        name="rparola"
+        value=""
+        autocomplete="off"
+      />
+    </p>
+    <p>
+      <input
+        placeholder="Email"
+        type="text"
+        name="email"
+        id="inp-email"
+        required
+        value=""
+        autocomplete="off"
+      />
+    </p>
+    <p>
+      <!-- <label>
+        Culoare text chat:
+        <select name="culoareText" id="sel-culoare">
+          <option value="red" selected>rosu</option>
+          <option value="green">verde</option>
+          <option value="blue">albastru</option>
+        </select>
+      </label> -->
+    </p>
+    <p>
+      <label><input class="input-poza" type="file" name="poza" /> </label>
+    </p>
+    <p>
+      <button
+        class="button-82-pushable-submit"
+        role="button"
+        type="submit"
+        value="sub"
+      >
+        <span class="button-82-shadow-submit"></span>
+        <span class="button-82-edge-submit"></span>
+        <span class="button-82-front-submit text">Register</span>
+      </button>
+      <button
+        class="button-82-pushable"
+        role="button"
+        type="reset"
+        value="Reseteaza"
+      >
+        <span class="button-82-shadow"></span>
+        <span class="button-82-edge"></span>
+        <span class="button-82-front text">Reseteaza</span>
+      </button>
+    </p>
+  </form>
+</section>

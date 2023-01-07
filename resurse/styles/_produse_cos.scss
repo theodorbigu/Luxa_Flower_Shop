@@ -1,0 +1,114 @@
+.cos_virtual {
+  padding-bottom: 10rem;
+}
+
+#buyItems {
+  //border: 2px solid red;
+  margin-left: 17vw;
+  margin-right: 17vw;
+  margin-top: 6rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.butoane_plus_minus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "item_count minus"
+    "item_count plus";
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+  button {
+    background-color: white;
+    color: #000;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    &:hover{
+      background-color: rgb(71, 70, 70);
+      color: white;
+    }
+  }
+}
+.button-minus {
+  grid-area: minus;
+}
+.button-plus {
+  grid-area: plus;
+}
+.countOfProduct {
+  grid-area: item_count;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+}
+
+#checkout {
+  //border: 2px solid red;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-left: 17vw;
+  margin-right: 17vw;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+  border-radius: 10px;
+  background: $nav-background;
+  //padding-bottom: 6rem;
+  #sum-prices {
+    color: white;
+    font-size: 30px;
+  }
+}
+
+.buyItem {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 30% auto;
+  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+  border-radius: 10px;
+  background: $nav-background;
+  margin-bottom: 2rem;
+  //width: 100%;
+}
+
+.product-name {
+  color: white;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  width: 40%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.product-price {
+  color: white;
+  font-size: 25px;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-img {
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+  overflow: hidden;
+  align-self: center;
+}

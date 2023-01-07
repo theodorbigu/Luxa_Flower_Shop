@@ -1,0 +1,182 @@
+{
+  "cale_galerie": "resurse/pictures/galerie/",
+  "imagini": [
+    {
+      "fisier": "flori_craciun_1.jpg",
+      "descriere": "Felicitare cu flori",
+      "luni": ["ianuarie", "februarie", "decembrie", "noiembrie"]
+    },
+    {
+      "fisier": "flori_craciun_2.jpg",
+      "descriere": "Flori si cana de craciun",
+      "luni": ["ianuarie", "februarie", "decembrie", "noiembrie"]
+    },
+    {
+      "fisier": "flori_craciun_3.jpg",
+      "descriere": "Ornament usa de craciun",
+      "luni": ["ianuarie", "februarie", "decembrie", "noiembrie"]
+    },
+    {
+      "fisier": "crin.jpg",
+      "descriere": "Crin",
+      "luni": [
+        "ianuarie",
+        "februarie",
+        "martie",
+        "aprilie",
+        "mai",
+        "iunie",
+        "iulie",
+        "august",
+        "septembrie",
+        "octombrie",
+        "noiembrie",
+        "decembrie"
+      ]
+    },
+    {
+      "fisier": "floare_roz.jpg",
+      "descriere": "Floare roz",
+      "luni": [
+        "ianuarie",
+        "februarie",
+        "martie",
+        "aprilie",
+        "mai",
+        "iunie",
+        "iulie",
+        "august",
+        "septembrie",
+        "octombrie",
+        "noiembrie",
+        "decembrie"
+      ]
+    },
+    {
+      "fisier": "floarea_soarelui.jpg",
+      "descriere": "Floarea soarelui",
+      "luni": [
+        "ianuarie",
+        "februarie",
+        "martie",
+        "aprilie",
+        "mai",
+        "iunie",
+        "iulie",
+        "august",
+        "septembrie",
+        "octombrie",
+        "noiembrie",
+        "decembrie"
+      ]
+    },
+    {
+      "fisier": "flori_albastre.jpg",
+      "descriere": "Flori albastre",
+      "luni": [
+        "ianuarie",
+        "februarie",
+        "martie",
+        "aprilie",
+        "mai",
+        "iunie",
+        "iulie",
+        "august",
+        "septembrie",
+        "octombrie",
+        "noiembrie",
+        "decembrie"
+      ]
+    },
+    {
+      "fisier": "flori_galbene.jpg",
+      "descriere": "Flori galbene",
+      "luni": [
+        "ianuarie",
+        "februarie",
+        "martie",
+        "aprilie",
+        "mai",
+        "iunie",
+        "iulie",
+        "august",
+        "septembrie",
+        "octombrie",
+        "noiembrie",
+        "decembrie"
+      ]
+    },
+    {
+      "fisier": "lalele.jpg",
+      "descriere": "Lalele",
+      "luni": [
+        "ianuarie",
+        "februarie",
+        "martie",
+        "aprilie",
+        "mai",
+        "iunie",
+        "iulie",
+        "august",
+        "septembrie",
+        "octombrie",
+        "noiembrie",
+        "decembrie"
+      ]
+    },
+    {
+      "fisier": "lalele_roz.jpg",
+      "descriere": "Lalele roz",
+      "luni": [
+        "ianuarie",
+        "februarie",
+        "martie",
+        "aprilie",
+        "mai",
+        "iunie",
+        "iulie",
+        "august",
+        "septembrie",
+        "octombrie",
+        "noiembrie",
+        "decembrie"
+      ]
+    },
+    {
+      "fisier": "trandafiri_albi.jpg",
+      "descriere": "Trandafiri albi",
+      "luni": [
+        "ianuarie",
+        "februarie",
+        "martie",
+        "aprilie",
+        "mai",
+        "iunie",
+        "iulie",
+        "august",
+        "septembrie",
+        "octombrie",
+        "noiembrie",
+        "decembrie"
+      ]
+    },
+    {
+      "fisier": "trandafiri_roz.jpg",
+      "descriere": "Trandafiri roz",
+      "luni": [
+        "ianuarie",
+        "februarie",
+        "martie",
+        "aprilie",
+        "mai",
+        "iunie",
+        "iulie",
+        "august",
+        "septembrie",
+        "octombrie",
+        "noiembrie",
+        "decembrie"
+      ]
+    }
+  ]
+}
